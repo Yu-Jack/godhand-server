@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
             'name' => 'Alex',
             'email' => 'Alex@gmail.com',
-            'avatar' => 'img/user_avatar/1.jpg',
+            'avatar' => 'img/user_avatar/2.jpg',
             'description' => 'Hello i\'m Alex',
             'following' => 1,
             'followed' => 1,
