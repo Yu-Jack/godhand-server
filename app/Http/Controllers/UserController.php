@@ -180,8 +180,11 @@ class UserController extends Controller
     {
         $targetId = $request->input('targetId');
         $userId = $request->input('userId');
-
-        $user_data = User::where('id', $targetId)->get()[0];
+        if( is_null($targetId) ){
+            $user_data = User::where('id', $userId)->get()[0];
+        }else{
+            $user_data = User::where('id', $targetId)->get()[0];
+        }
         $images = $user_data->image;
         $image_detail = [];
 
