@@ -8,6 +8,7 @@ use Illuminate\Http\Response;
 use App\User;
 use App\Image;
 use App\Follow;
+use App\Favorite;
 use Auth;
 use Input;
 use Session;
@@ -120,6 +121,7 @@ class UserController extends Controller
             $image = $favorite->image ;
             $image = array_add($image, 'auth', $auth->name);
             $image = array_add($image, 'authavatar', $auth->avatar);
+            $image = array_add($image, 'authId', $auth->id);
             $image = array_add($image, 'count_favorite', count($image->favorite));
             $image = array_add($image, 'count_views', $image->views);
             $image = array_add($image, 'count_comments', count($image->comment));
@@ -198,6 +200,14 @@ class UserController extends Controller
         }
 
         foreach ($images as $image) {
+            $isLiked = Favorite::where('user_id', $userId)->where('image_id', $image->id )->get();
+
+            if(count($isLiked) == 1){
+                $image = array_add($image, 'isLiked', true);
+            }else{
+                $image = array_add($image, 'isLiked', false);
+            }
+
             $image = array_add($image, 'count_favorite', count($image->favorite));
             $image = array_add($image, 'count_views', $image->views);
             $image = array_add($image, 'count_comments', count($image->comment));
