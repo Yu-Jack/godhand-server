@@ -15,13 +15,13 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         // $this->call(UserTableSeeder::class);
-        DB::table('users')->insert([
+         DB::table('users')->insert([
             'name' => 'picasso',
             'email' => 'picasso@gmail.com',
             'avatar' => 'img/user_avatar/3.jpg',
             'description' => 'Hello i\'m Picasso',
-            'following' => 1,
-            'followed' => 1,
+            'following' => 0,
+            'followed' => 0,
             'password' => bcrypt('picasso')
         ]);
 
@@ -30,8 +30,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'VanGogh@gmail.com',
             'avatar' => 'img/user_avatar/4.jpg',
             'description' => 'Hello i\'m Van Gogh',
-            'following' => 1,
-            'followed' => 1,
+            'following' => 0,
+            'followed' => 0,
             'password' => bcrypt('secret')
         ]);
 
@@ -39,6 +39,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=>1,
             'image_url'=>'img/picasso_1.jpg',
             'title'=>'格爾尼卡',
+            'views' => 34,
             'description'=>'巴勃羅·畢卡索最著名的繪畫作品之一。
 當時西班牙內戰中納粹德國受弗朗西斯科·佛朗哥之邀對西班牙共和國所轄的格爾尼卡城進行了人類歷史上第一次地毯式轟炸。
 當時畢卡索受西班牙共和國政府委託為巴黎世界博覽會的西班牙區繪一幅裝飾性的畫，從而催生了這幅偉大的立體派藝術作品。'
@@ -48,6 +49,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=>1,
             'image_url'=>'img/picasso_2.jpg',
             'title'=>'哭泣的女人',
+            'views' => 43,
             'description'=>'畢卡索於1937年創作的一幅油畫作品。
 當時畢卡索非常著迷於這個主題，在同一年裡重畫了多次。
 現在的這幅油畫是這個系列裡面最終也是最精緻的一幅，現存於英國倫敦的泰特美術館。'
@@ -57,6 +59,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=>1,
             'image_url'=>'img/picasso_3.jpg',
             'title'=>'朵拉與小貓',
+            'views' => 14,
             'description'=>'畢卡索於1941年創作的一幅油畫作品。
 它描繪了朵拉·瑪爾，也就是畫家的情人，坐在一個椅子里，一隻小貓停在她的肩膀上歇息。
 最近一次公開拍賣為2006年，由蘇富比於紐約賣出，當時作價9500萬美元，成為當前世界上最貴的畫作之一。'
@@ -66,6 +69,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=>1,
             'image_url'=>'img/picasso_4.jpg',
             'title'=>'裸體、綠葉和半身像',
+            'views' => 12,
             'description'=>'畢卡索於1932年所畫的一幅油畫
 主題是其情婦瑪麗-德雷莎·華特。
 此幅油畫是由洛杉磯的錫德尼·布羅迪及弗朗西斯·布魯迪夫婦自1950年代起一直收藏
@@ -76,6 +80,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=>1,
             'image_url'=>'img/picasso_5.jpg',
             'title'=>'拿著煙斗的男孩',
+            'views' => 64,
             'description'=>'畢卡索於1905年當他24歲的時候創作的一幅油畫作品
 這時他剛定居於法國巴黎的蒙馬特區且正處於玫瑰時期。
 這件繪於畫布上的油畫作品描述了一位帶著花環，左手拿著煙斗的巴黎男孩。 '
@@ -85,6 +90,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=>2,
             'image_url'=>'img/van_1.jpg',
             'title'=>'星夜',
+            'views' => 54,
             'description'=>'荷蘭後印象派畫家文森·梵谷於1889年在法國聖雷米的一家精神病院里創作的一幅著名油畫，是畫家的代表作之一，現藏紐約現代藝術博物館。 '
         ]);
 
@@ -92,6 +98,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=>2,
             'image_url'=>'img/van_2.jpg',
             'title'=>'隆河上的星夜',
+            'views' => 89,
             'description'=>'荷蘭後印象派畫家文森特·梵谷於1888年創作的著名油畫。
 顯示了法國南部城市亞爾的隆河上的夜景。
 該畫現藏於法國巴黎的奧塞美術館。 '
@@ -101,6 +108,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=>2,
             'image_url'=>'img/van_3.jpg',
             'title'=>'夜晚露天咖啡座',
+            'views' => 77,
             'description'=>'荷蘭畫家梵谷的作品之一，他於1888年9月在法國普羅旺斯的阿爾勒所繪
 目前收藏在荷蘭的克勒勒-米勒博物館內。
 
@@ -112,6 +120,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=>2,
             'image_url'=>'img/van_4.png',
             'title'=>'吃馬鈴薯的人',
+            'views' => 101,
             'description'=>'荷蘭後印象派畫家文森特·梵谷創作於1885年的一幅油畫。
 該畫現藏於阿姆斯特丹的梵谷博物館。'
         ]);
