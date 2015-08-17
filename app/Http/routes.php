@@ -36,3 +36,8 @@ Route::post('/activity_attend', 'ActivityController@attend');
 Route::post('/follow', 'UserController@follow');
 Route::post('/activity_detail', 'ActivityController@show');
 Route::get('/activity', 'ActivityController@index');
+
+Route::get('/sales', 'SalesController@index');
+Route::get('/sales/{id}', 'SalesController@show');
+Route::post('/sales_comment', 'CommentController@sales_comment');
+Route::post('/sales_upload', 'SalesController@create');

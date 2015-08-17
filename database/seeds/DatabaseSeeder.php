@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Seeder;
@@ -43,6 +44,65 @@ class DatabaseSeeder extends Seeder
             'description'=>'巴勃羅·畢卡索最著名的繪畫作品之一。
 當時西班牙內戰中納粹德國受弗朗西斯科·佛朗哥之邀對西班牙共和國所轄的格爾尼卡城進行了人類歷史上第一次地毯式轟炸。
 當時畢卡索受西班牙共和國政府委託為巴黎世界博覽會的西班牙區繪一幅裝飾性的畫，從而催生了這幅偉大的立體派藝術作品。'
+        ]);
+
+        DB::table('sales')->insert([
+            'user_id'=>1,
+            'image_url'=>'img/sales_1.jpg',
+            'title'=>'神指引我的道路',
+            'money'=>100,
+            'views' => 34,
+            'description'=>'耶穌說：讓小孩子到我這裏來、不要禁止他們． 
+因為在天國的、正是這樣的人。 （馬太福音 19:14 ） 
+
+每個人的心理都住著一個快樂的孩子, 
+當我看到法鬥的表情和動作,就好像看到一個無拘無束的小朋友一樣,畫下他們,和狗主人交流狗狗的趣事. 
+靈感就這樣不斷的湧出,每次看到觀者甜蜜的笑容,回饋他們對作品的想法時,我知道畫畫不只是我一個人的快樂了~ 
+這是我持續創作的最大動力. 
+
+粉絲頁：https://www.facebook.com/Bonbonartu'
+        ]);
+        DB::table('sales')->insert([
+            'user_id'=>1,
+            'image_url'=>'img/sales_2.jpg',
+            'title'=>'招柴進寶',
+            'money'=>200,
+            'views' => 34,
+            'description'=>'小柴犬當起了招財犬，一下舉起右手「招財」抱著金幣帶來財富，一下舉起左手「招福」抱著茄子象徵愛情和好運，不管是財運還是福運都要旺旺來唷！'
+        ]);
+        DB::table('sales')->insert([
+            'user_id'=>1,
+            'image_url'=>'img/sales_6.jpg',
+            'title'=>'大白兔的夏日西瓜夢',
+            'money'=>395,
+            'views' => 34,
+            'description'=>'這樣的炎炎夏日，大白兔突然收到好友送來的西瓜，心情開心的不得了！'
+        ]);
+
+        DB::table('sales_images')->insert([
+            'sales_id'=>3,
+            'image_url'=>'img/sales_5.jpg'
+        ]);
+        DB::table('sales_images')->insert([
+            'sales_id'=>3,
+            'image_url'=>'img/sales_6.jpg'
+        ]);
+
+        DB::table('sales_images')->insert([
+            'sales_id'=>1,
+            'image_url'=>'img/sales_1.jpg'
+        ]);
+        DB::table('sales_images')->insert([
+            'sales_id'=>1,
+            'image_url'=>'img/sales_3.jpg'
+        ]);
+        DB::table('sales_images')->insert([
+            'sales_id'=>2,
+            'image_url'=>'img/sales_2.jpg'
+        ]);
+        DB::table('sales_images')->insert([
+            'sales_id'=>2,
+            'image_url'=>'img/sales_4.jpg'
         ]);
 
         DB::table('images')->insert([
@@ -192,12 +252,7 @@ class DatabaseSeeder extends Seeder
         DB::table('activitys')->insert([
             'user_id'=>1,
             'title'=>'故事工廠第三回作品《男言之隱》',
-            'position' => '
-高雄市苓雅區五福一路67號 高雄市文化中心至德堂
-臺中市豐原區圓環東路782號 臺中市葫蘆墩文化中心演奏廳
-桃園市中正路1188號 桃園展演中心展演廳
-苗栗縣竹南鎮公園路206號 苗北藝文中心演藝廳
-            ',
+            'position' => '桃園市中正路1188號 桃園展演中心展演廳',
             'image_url' => 'img/activity/4.jpg',
             'member' => 125,
             'description'=>'光林他滿五十歲時，有感「時間」消逝且無處不在、隱而不顯地主宰萬物

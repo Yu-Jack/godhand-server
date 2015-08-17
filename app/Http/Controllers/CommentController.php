@@ -8,6 +8,7 @@ use Illuminate\Http\Response;
 use App\User;
 use App\Image;
 use App\Comment;
+use App\SalesComment;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -37,6 +38,20 @@ class CommentController extends Controller
 
         $comment = new Comment;
         $comment->image_id = $image_id;
+        $comment->user_id = $user_id;
+        $comment->comment = $text;
+        $comment->save();
+
+        return Response()->json(['success' => true])->header('Access-Control-Allow-Origin', '*')->header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')->header('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization, X-Request-With')->header('Access-Control-Allow-Credentials', true);
+    }
+
+    public function sales_comment(Request $request){
+        $user_id = $request->input('user');
+        $sales_id = $request->input('salesId');
+        $text = $request->input('text');
+
+        $comment = new SalesComment;
+        $comment->sales_id = $sales_id;
         $comment->user_id = $user_id;
         $comment->comment = $text;
         $comment->save();
